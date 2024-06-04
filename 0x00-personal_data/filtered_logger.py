@@ -43,6 +43,8 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
     db_name = os.getenv("PERSONAL_DATA_DB_NAME", "")
     db_user = os.getenv("PERSONAL_DATA_DB_USERNAME", "root")
     db_pwd = os.getenv("PERSONAL_DATA_DB_PASSWORD", "")
+    if not db_name:
+        raise ValueError("Database name not set in environment variables")
     connection = mysql.connector.connect(
         host=db_host,
         port=3306,

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Main file to test the get_db function.
+Main file
 """
 
 get_db = __import__('filtered_logger').get_db
